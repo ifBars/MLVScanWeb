@@ -17,8 +17,7 @@ namespace MLVScan.Models.Rules
             var methodName = method.Name;
 
             return (typeName.Contains("System.Diagnostics.Process") && methodName == "Start") ||
-                   (typeName.Contains("Process") && methodName == "Start" ||
-                    typeName.Contains("Process") && methodName == "Start");
+                   (typeName.Contains("Process") && methodName == "Start");
         }
     }
 }
