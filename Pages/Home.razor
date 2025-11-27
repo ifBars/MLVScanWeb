@@ -670,18 +670,25 @@
 
         try
         {
-            // Create a stream from the file data
-            var stream = new MemoryStream(fileData);
-            stream.Position = 0;
+            // Create a custom IBrowserFile implementation from the dropped file data
+            var browserFile = new DroppedBrowserFile(fileData, fileName, contentType);
             
-            // Create a BrowserFile from the stream
-            var browserFile = new BrowserFile(fileName, contentType, fileData.LongLength, stream);
-            
-            await HandleFileSelected(new InputFileChangeEventArgs(new[] { browserFile }, 0));
+            // Call HandleFileSelected directly with the file
+            error = null;
+            result = null;
+            lastFileName = browserFile.Name;
+
+            isScanning = true;
+            StateHasChanged();
+            result = await Scanner.ScanAsync(browserFile);
         }
         catch (Exception ex)
         {
             error = $"Failed to process dropped file: {ex.Message}";
+        }
+        finally
+        {
+            isScanning = false;
         }
     }
 
