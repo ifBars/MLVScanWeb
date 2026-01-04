@@ -1,10 +1,10 @@
 # MLVScanWeb
 
-**MLVScanWeb** is a privacy-first, browser-based malware scanner for Unity mods. It runs [MLVScan.Core](../MLVScan.Core) entirely in your browser using **WebAssembly** (Blazor).
+**MLVScanWeb** is a privacy-first, browser-based malware scanner for Unity mods. It runs [MLVScan.Core](https://github.com/ifBars/MLVScan.Core) entirely in your browser using **WebAssembly** (Blazor).
 
 ## 🌍 Live Demo
 
-[Launch Scanner](https://mlvscan.yourdomain.com) *(Demo Link)*
+[Launch Scanner](https://ifbars.github.io/MLVScanWeb/)
 
 ## ✨ Key Features
 
@@ -18,7 +18,6 @@
 git clone https://github.com/ifBars/MLVScanWeb.git
 cd MLVScanWeb
 dotnet run
-# Open https://localhost:5001
 ```
 
 ## 📚 Documentation
