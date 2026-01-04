@@ -230,3 +230,5 @@ Thumbs.db
 # Local development
 appsettings.Development.json
 appsettings.Local.json
+
+AGENTS.md
